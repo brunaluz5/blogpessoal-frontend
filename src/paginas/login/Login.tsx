@@ -4,13 +4,13 @@ import { Box } from '@mui/material';
 import { Link, useNavigate } from "react-router-dom";
 import useLocalStorage from "react-use-localstorage";
 import { login } from "../../services/Service";
-import UsuarioLogin from "../../models/UsuarioLogin";
+import UserLogin from "../../models/UsuarioLogin";
 import './Login.css';
 
 function Login() {
     let navigate = useNavigate();
     const [token, setToken] = useLocalStorage('token');
-    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>({
+    const [userLogin, setUserLogin] = useState<UserLogin>({
         id: 0,
         usuario: '',
         senha: '',
@@ -19,8 +19,8 @@ function Login() {
     )
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-        setUsuarioLogin({
-            ...usuarioLogin,
+        setUserLogin({
+            ...userLogin,
             [e.target.name]: e.target.value
         })
     }
@@ -34,7 +34,7 @@ function Login() {
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
-            await login(`/usuarios/logar`, usuarioLogin, setToken)
+            await login(`/usuarios/logar`, userLogin, setToken)
 
             alert('Usuário logado com sucesso!')
 
@@ -65,7 +65,7 @@ function Login() {
                 Entrar
               </Typography>
               <TextField
-                value={usuarioLogin.usuario}
+                value={userLogin.usuario}
                 onChange={(event: ChangeEvent<HTMLInputElement>) =>
                   updatedModel(event)
                 }
@@ -77,7 +77,7 @@ function Login() {
                 fullWidth
               />
               <TextField
-                value={usuarioLogin.senha}
+                value={userLogin.senha}
                 onChange={(event: ChangeEvent<HTMLInputElement>) =>
                   updatedModel(event)
                 }
