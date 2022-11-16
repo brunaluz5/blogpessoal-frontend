@@ -2,16 +2,19 @@
     text-decoration: none;
 }
 
-.textos{
-    color: black;
-    font-weight: bold;
-}
-
-.img-log{
+.img-cad{
     background-image: url(https://i.imgur.com/cFksSW5.jpeg);
     background-repeat: no-repeat;
     width: 100vh; 
     min-height: 100vh; 
     background-size: cover;
     background-position: center;
+}
+
+.btnCancelar{
+margin-right: 20px !important;
+}
+
+.textos2{
+    font-weight: bold !important;
 }

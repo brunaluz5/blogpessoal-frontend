@@ -1,0 +1,19 @@
+.box1{
+background-color: #3F51B5;
+height: 40px;
+}
+
+.box2{
+    background-color: #303F9F;
+    height: 30px;
+    }
+
+.redes{
+    font-size: 40px !important;
+    color: rgb(30, 32, 26);
+}
+
+.textos{
+    color: white;
+    font-size: 20px;
+}
